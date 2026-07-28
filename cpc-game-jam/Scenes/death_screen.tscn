@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://5murjkp37tl3"]
+
+[ext_resource type="Script" uid="uid://dwnkp6ix4s6l2" path="res://Scripts/death_screen.gd" id="1_rwas2"]
+[ext_resource type="FontFile" uid="uid://cwdffny6ehs20" path="res://Assets/Ui/Font/PixelOperator8.ttf" id="2_tseak"]
+[ext_resource type="AudioStream" uid="uid://4igs8ucsnjev" path="res://Assets/SFX/dragon-studio-button-press-382713.mp3" id="3_tseak"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwas2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3qio"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmfwj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1r1s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_avkmx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kcryb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2c8yj"]
+
+[node name="Death_screen" type="Control" unique_id=351564468]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rwas2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1379043586]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=443715099]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rwas2")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1482219362]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -597.0
+offset_top = 32.0
+offset_right = 597.0
+offset_bottom = 285.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8350689, 0.0055048824, 4.813075e-07, 1)
+theme_override_fonts/font = ExtResource("2_tseak")
+theme_override_font_sizes/font_size = 124
+text = "YOU'RE DEAD!
+	(BOZO!)"
+
+[node name="Menu" type="Button" parent="CanvasLayer" unique_id=699722374]
+texture_filter = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -603.0
+offset_top = 77.0
+offset_right = -83.0
+offset_bottom = 175.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.92156863, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.59905666, 1.4318898e-06, 4.3317675e-07, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.6455512, 2.5629624e-06, 4.813075e-07, 1)
+theme_override_fonts/font = ExtResource("2_tseak")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l3qio")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dmfwj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r1r1s")
+text = "Go to menu"
+
+[node name="Exit_game" type="Button" parent="CanvasLayer" unique_id=1864316398]
+texture_filter = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 36.0
+offset_top = 80.0
+offset_right = 516.0
+offset_bottom = 178.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.92156863, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.4812734, 1.0949746e-06, 2.4065375e-07, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.7059392, 3.5376102e-06, 3.85046e-07, 1)
+theme_override_fonts/font = ExtResource("2_tseak")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_avkmx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kcryb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2c8yj")
+text = "Quit Game"
+
+[node name="Try again" type="Button" parent="CanvasLayer" unique_id=1955212117]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -242.0
+offset_top = -143.0
+offset_right = 238.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.92156863, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.4812734, 1.0949746e-06, 2.4065375e-07, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.7059392, 3.5376102e-06, 3.85046e-07, 1)
+theme_override_fonts/font = ExtResource("2_tseak")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_avkmx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kcryb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2c8yj")
+text = "Try again"
+
+[node name="Score" type="Label" parent="CanvasLayer" unique_id=143260050]
+texture_filter = 1
+offset_left = 417.0
+offset_top = 304.0
+offset_right = 786.0
+offset_bottom = 410.0
+theme_override_colors/font_color = Color(0.84705883, 0.07450981, 0.07058824, 1)
+theme_override_fonts/font = ExtResource("2_tseak")
+theme_override_font_sizes/font_size = 62
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1941619568]
+stream = ExtResource("3_tseak")
+bus = &"Sfx"
+
+[connection signal="pressed" from="CanvasLayer/Menu" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit_game" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Try again" to="." method="_on_try_again_pressed"]

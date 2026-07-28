@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://byor210bjpoyb"]
+
+[ext_resource type="Script" uid="uid://c1vyji1hjvn0a" path="res://Resources/White_ghost.gd" id="1_5xj8j"]
+[ext_resource type="Texture2D" uid="uid://blu7uhph87wu6" path="res://Assets/Enemies/GHOST-1.png" id="1_ymxaj"]
+[ext_resource type="PackedScene" uid="uid://dggp5x0upx616" path="res://Scenes/emerald.tscn" id="2_15deh"]
+[ext_resource type="PackedScene" uid="uid://c2x4vwg8bmlhb" path="res://Scenes/blood.tscn" id="3_ptn4l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88kja"]
+atlas = ExtResource("1_ymxaj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it8n0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88kja")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gbyq6"]
+radius = 8.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pbq55"]
+radius = 17.18284
+
+[node name="Ghost" type="CharacterBody2D" unique_id=1115152864]
+process_mode = 1
+scale = Vector2(2, 2)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_5xj8j")
+money = ExtResource("2_15deh")
+blood = ExtResource("3_ptn4l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2050575595]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_it8n0")
+
+[node name="Enemy_hitbox" type="CollisionShape2D" parent="." unique_id=1716900226]
+position = Vector2(-0.5, -1)
+shape = SubResource("CapsuleShape2D_gbyq6")
+
+[node name="Hurt_box" type="Area2D" parent="." unique_id=134975027]
+
+[node name="collision_box" type="CollisionShape2D" parent="Hurt_box" unique_id=519207812]
+shape = SubResource("CircleShape2D_pbq55")
+
+[connection signal="body_entered" from="Hurt_box" to="." method="_on_hurt_box_body_entered"]

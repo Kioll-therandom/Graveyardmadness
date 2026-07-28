@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dggp5x0upx616"]
+
+[ext_resource type="Texture2D" uid="uid://c5rjbd02s03h" path="res://Assets/Ui/pickups/emerald.png" id="1_3x6wh"]
+[ext_resource type="Script" uid="uid://dhi4d58t6143j" path="res://Scripts/emerald.gd" id="2_aq4rk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aq4rk"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=320821934]
+texture_filter = 1
+texture = ExtResource("1_3x6wh")
+script = ExtResource("2_aq4rk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=782993280]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1177801306]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_aq4rk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

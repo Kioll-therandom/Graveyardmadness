@@ -1,0 +1,373 @@
+[gd_scene format=3 uid="uid://cy2bvgguytm8a"]
+
+[ext_resource type="Script" uid="uid://c13x7q26667pq" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="FontFile" uid="uid://cwdffny6ehs20" path="res://Assets/Ui/Font/PixelOperator8.ttf" id="1_48xlc"]
+[ext_resource type="FontFile" uid="uid://djmwfr4cl06rj" path="res://Assets/Ui/Font/PixelOperator8-Bold.ttf" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://1iwmn4te1q8j" path="res://Assets/tileset/Background.png" id="3_cp0ys"]
+[ext_resource type="Script" uid="uid://rmv0lo11xwqc" path="res://Scripts/Audio_control.gd" id="4_ce3w2"]
+[ext_resource type="AudioStream" uid="uid://ldh3d1vk1ace" path="res://Assets/Music/moodmode-horror-music-233961.mp3" id="7_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://cesh4gpmuo534" path="res://Assets/Ui/Background_monster/Monster.png" id="8_yhxw7"]
+[ext_resource type="AudioStream" uid="uid://4igs8ucsnjev" path="res://Assets/SFX/dragon-studio-button-press-382713.mp3" id="9_trj04"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhxw7"]
+texture = ExtResource("3_cp0ys")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtepg"]
+atlas = ExtResource("8_yhxw7")
+region = Rect2(1280, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dnnj"]
+atlas = ExtResource("8_yhxw7")
+region = Rect2(1600, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3bi6"]
+atlas = ExtResource("8_yhxw7")
+region = Rect2(1920, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyh8j"]
+atlas = ExtResource("8_yhxw7")
+region = Rect2(2240, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujyyl"]
+atlas = ExtResource("8_yhxw7")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhxw7"]
+atlas = ExtResource("8_yhxw7")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trj04"]
+atlas = ExtResource("8_yhxw7")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16hvj"]
+atlas = ExtResource("8_yhxw7")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr1f0"]
+atlas = ExtResource("8_yhxw7")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mkpwh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtepg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dnnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3bi6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyh8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujyyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhxw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trj04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16hvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr1f0")
+}],
+"loop": true,
+"name": &"Eyes_Open",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48xlc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ehe0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce3w2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n45e2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opfnp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cp0ys"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_16hvj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhxw7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vr1f0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trj04"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1dhk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5egv6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtepg"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8dnnj"]
+content_margin_bottom = 1.0
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_m3bi6"]
+color = Color(0.34509805, 0.54901963, 1, 1)
+thickness = 6
+
+[node name="Main_menu" type="Control" unique_id=1730836857]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ehe0")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=623837986]
+stream = ExtResource("7_yhxw7")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1118472479]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1523656048]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_yhxw7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1707579641]
+position = Vector2(622, 361.49997)
+scale = Vector2(3.63125, 4.038889)
+sprite_frames = SubResource("SpriteFrames_mkpwh")
+animation = &"Eyes_Open"
+
+[node name="main_buttons" type="VBoxContainer" parent="CanvasLayer" unique_id=1653191685]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -145.0
+offset_top = -282.0
+offset_right = 145.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="Start" type="Button" parent="CanvasLayer/main_buttons" unique_id=557639426]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.89827543, 2.5990605e-06, 1.2513996e-06, 1)
+theme_override_colors/font_pressed_color = Color(0.5007412, 3.730133e-07, 1.92523e-07, 1)
+theme_override_colors/font_hover_color = Color(0.6455514, 1.8289685e-06, 3.3691526e-07, 1)
+theme_override_fonts/font = ExtResource("1_48xlc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_48xlc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1ehe0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ce3w2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n45e2")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_opfnp")
+text = "START
+"
+
+[node name="Options" type="Button" parent="CanvasLayer/main_buttons" unique_id=229627218]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.89827543, 2.5990605e-06, 1.2513996e-06, 1)
+theme_override_colors/font_pressed_color = Color(0.5007412, 3.730133e-07, 1.92523e-07, 1)
+theme_override_colors/font_hover_color = Color(0.6455514, 1.8289685e-06, 3.3691526e-07, 1)
+theme_override_fonts/font = ExtResource("1_48xlc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cp0ys")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_16hvj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_yhxw7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vr1f0")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_trj04")
+text = "Options
+"
+
+[node name="Exit" type="Button" parent="CanvasLayer/main_buttons" unique_id=2106588073]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.89827543, 2.5990605e-06, 1.2513996e-06, 1)
+theme_override_colors/font_pressed_color = Color(0.5007412, 3.730133e-07, 1.92523e-07, 1)
+theme_override_colors/font_hover_color = Color(0.6455514, 1.8289685e-06, 3.3691526e-07, 1)
+theme_override_fonts/font = ExtResource("1_48xlc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cp0ys")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_16hvj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_yhxw7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vr1f0")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_trj04")
+text = "Exit
+"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1260674147]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -532.0
+offset_top = -214.25
+offset_right = 532.0
+offset_bottom = -115.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6517385, 0.0029983653, 4.813075e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("2_1ehe0")
+theme_override_font_sizes/font_size = 64
+text = "Graveyard madness"
+
+[node name="options-panel" type="Panel" parent="CanvasLayer" unique_id=1800046334]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -451.0
+offset_right = 203.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/options-panel" unique_id=2047729318]
+texture_filter = 1
+layout_mode = 0
+offset_left = 97.0
+offset_top = 37.0
+offset_right = 309.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0.6509804, 0.003921569, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_1ehe0")
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="back" type="Button" parent="CanvasLayer/options-panel" unique_id=587653262]
+texture_filter = 1
+layout_mode = 0
+offset_left = 134.0
+offset_top = 341.0
+offset_right = 262.0
+offset_bottom = 386.0
+theme_override_colors/font_color = Color(0.6509804, 0.003921569, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.4743172, 0.0019649258, 9.62615e-08, 1)
+theme_override_colors/font_hover_color = Color(0.58526653, 0.0031026525, 1.4439226e-07, 1)
+theme_override_fonts/font = ExtResource("1_48xlc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t1dhk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5egv6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vtepg")
+text = "Back"
+
+[node name="MusicControl" type="HSlider" parent="CanvasLayer/options-panel" unique_id=258076961]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 80.0
+offset_right = 376.0
+offset_bottom = 111.0
+theme_override_styles/slider = SubResource("StyleBoxLine_8dnnj")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_m3bi6")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("4_ce3w2")
+AudioBusName = "Music"
+
+[node name="Label2" type="Label" parent="CanvasLayer/options-panel" unique_id=162288925]
+texture_filter = 1
+layout_mode = 0
+offset_left = 145.0
+offset_top = 104.0
+offset_right = 241.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0.6509804, 0.003921569, 0, 1)
+theme_override_fonts/font = ExtResource("1_48xlc")
+theme_override_font_sizes/font_size = 22
+text = "Music"
+
+[node name="MasterControl" type="HSlider" parent="CanvasLayer/options-panel" unique_id=688270675]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 137.0
+offset_right = 376.0
+offset_bottom = 168.0
+theme_override_styles/slider = SubResource("StyleBoxLine_8dnnj")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_m3bi6")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("4_ce3w2")
+AudioBusName = "Master"
+
+[node name="Label3" type="Label" parent="CanvasLayer/options-panel" unique_id=1303693723]
+texture_filter = 1
+layout_mode = 0
+offset_left = 137.0
+offset_top = 165.0
+offset_right = 255.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(0.6509804, 0.003921569, 0, 1)
+theme_override_fonts/font = ExtResource("1_48xlc")
+theme_override_font_sizes/font_size = 22
+text = "Master
+"
+
+[node name="SFXControl" type="HSlider" parent="CanvasLayer/options-panel" unique_id=766009821]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 201.0
+offset_right = 376.0
+offset_bottom = 232.0
+theme_override_styles/slider = SubResource("StyleBoxLine_8dnnj")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_m3bi6")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("4_ce3w2")
+AudioBusName = "Sfx"
+
+[node name="Label4" type="Label" parent="CanvasLayer/options-panel" unique_id=897224510]
+texture_filter = 1
+layout_mode = 0
+offset_left = 142.0
+offset_top = 242.0
+offset_right = 228.0
+offset_bottom = 317.0
+theme_override_colors/font_color = Color(0.6509804, 0.003921569, 0, 1)
+theme_override_fonts/font = ExtResource("1_48xlc")
+theme_override_font_sizes/font_size = 22
+text = "SFX
+
+"
+
+[node name="Sfx" type="AudioStreamPlayer" parent="." unique_id=712095649]
+stream = ExtResource("9_trj04")
+bus = &"Sfx"
+
+[connection signal="pressed" from="CanvasLayer/main_buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/main_buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/main_buttons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/options-panel/back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="CanvasLayer/options-panel/MusicControl" to="CanvasLayer/options-panel/MusicControl" method="_on_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/options-panel/MasterControl" to="CanvasLayer/options-panel/MasterControl" method="_on_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/options-panel/SFXControl" to="CanvasLayer/options-panel/SFXControl" method="_on_value_changed"]
